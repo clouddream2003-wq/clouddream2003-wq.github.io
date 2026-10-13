@@ -4,42 +4,229 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy - LRC-Maker & Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0" rel="stylesheet">
 <style>
-  :root { --bg:#fafafb; --card:#ffffff; --text:#1f2937; --muted:#6b7280; --border:#e5e7eb; --accent:#111827; }
+  :root {
+    --md-sys-color-primary: #6750A4;
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-primary-container: #EADDFF;
+    --md-sys-color-on-primary-container: #21005D;
+    --md-sys-color-secondary: #625B71;
+    --md-sys-color-secondary-container: #E8DEF8;
+    --md-sys-color-on-secondary-container: #1D192B;
+    --md-sys-color-surface: #FFFBFF;
+    --md-sys-color-surface-container: #F3EDF7;
+    --md-sys-color-surface-container-low: #F7F2FA;
+    --md-sys-color-surface-container-high: #ECE6F0;
+    --md-sys-color-surface-container-highest: #E6E0E9;
+    --md-sys-color-on-surface: #1D1B20;
+    --md-sys-color-on-surface-variant: #49454F;
+    --md-sys-color-outline: #79747E;
+    --md-sys-color-outline-variant: #CAC4D0;
+    --md-sys-elev-1: 0px 1px 2px rgba(0,0,0,0.08), 0px 1px 3px rgba(0,0,0,0.08);
+    --md-sys-elev-2: 0px 1px 2px rgba(0,0,0,0.08), 0px 2px 6px rgba(0,0,0,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --md-sys-color-primary: #D0BCFF;
+      --md-sys-color-on-primary: #381E72;
+      --md-sys-color-primary-container: #4F378B;
+      --md-sys-color-on-primary-container: #EADDFF;
+      --md-sys-color-secondary: #CCC2DC;
+      --md-sys-color-secondary-container: #4A4458;
+      --md-sys-color-on-secondary-container: #E8DEF8;
+      --md-sys-color-surface: #141218;
+      --md-sys-color-surface-container: #211F26;
+      --md-sys-color-surface-container-low: #1D1B20;
+      --md-sys-color-surface-container-high: #2B2930;
+      --md-sys-color-surface-container-highest: #36343B;
+      --md-sys-color-on-surface: #E6E0E9;
+      --md-sys-color-on-surface-variant: #CAC4D0;
+      --md-sys-color-outline: #938F99;
+      --md-sys-color-outline-variant: #49454F;
+    }
+  }
   *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
-  .container{max-width:860px;margin:0 auto;padding:32px 20px 64px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-  h1{font-size:28px;line-height:1.2;margin:0 0 8px;letter-spacing:-.02em}
-  .subtitle{color:var(--muted);font-size:14px;margin-bottom:24px}
-  h2{font-size:20px;margin:36px 0 12px;letter-spacing:-.01em;border-bottom:1px solid var(--border);padding-bottom:8px}
-  h3{font-size:16px;margin:20px 0 8px}
-  p{margin:12px 0}
-  ul{margin:8px 0 16px 20px}
-  li{margin:6px 0}
-  a{color:#0f172a;text-decoration:underline;text-underline-offset:3px}
-  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 24px}
-  .meta-item{background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:14px}
-  .meta-item strong{display:block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-  .notice{background:#f3f4f6;border:1px solid var(--border);border-radius:12px;padding:16px;font-size:14px;color:#374151}
-  @media(max-width:640px){.meta-grid{grid-template-columns:1fr}.card{padding:22px}h1{font-size:24px}}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:var(--md-sys-color-surface);
+    color:var(--md-sys-color-on-surface);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  /* Top App Bar - M3 */
+  .m3-top-app-bar{
+    position:sticky; top:0; z-index:10;
+    background:var(--md-sys-color-surface-container);
+    backdrop-filter: blur(12px);
+    border-bottom:1px solid var(--md-sys-color-outline-variant);
+    padding:16px 24px;
+  }
+  .m3-top-app-bar-inner{
+    max-width:960px; margin:0 auto;
+    display:flex; align-items:center; gap:16px;
+  }
+  .m3-icon-button{
+    width:40px; height:40px; border-radius:20px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--md-sys-color-surface-container-high);
+    color:var(--md-sys-color-on-surface-variant);
+  }
+  .m3-app-bar-title{
+    font-family:"Google Sans", Roboto, sans-serif;
+    font-size:22px; font-weight:500; letter-spacing:0;
+    line-height:28px;
+  }
+  .m3-app-bar-subtitle{
+    font-size:14px; font-weight:400; color:var(--md-sys-color-on-surface-variant);
+  }
+
+  .container{max-width:960px;margin:0 auto;padding:24px 16px 80px}
+  /* Main M3 Card */
+  .m3-card{
+    background:var(--md-sys-color-surface-container-low);
+    border:1px solid var(--md-sys-color-outline-variant);
+    border-radius:28px;
+    padding:32px;
+    box-shadow:var(--md-sys-elev-1);
+  }
+  .m3-headline{
+    display:flex; gap:16px; align-items:flex-start; margin-bottom:8px;
+  }
+  .m3-headline-icon{
+    width:56px; height:56px; border-radius:16px; flex-shrink:0;
+    background:var(--md-sys-color-primary-container);
+    color:var(--md-sys-color-on-primary-container);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .m3-headline-icon .material-symbols-outlined{font-size:28px}
+  h1{
+    font-family:"Google Sans", Roboto, sans-serif;
+    font-size:28px; line-height:36px; font-weight:700;
+    letter-spacing:0; margin:0 0 8px;
+    color:var(--md-sys-color-on-surface);
+  }
+  .subtitle{
+    color:var(--md-sys-color-on-surface-variant);
+    font-size:16px; line-height:24px; margin-bottom:24px;
+    font-weight:400;
+  }
+
+  /* Meta Grid - M3 Cards */
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 28px}
+  .meta-item{
+    background:var(--md-sys-color-surface-container);
+    border:1px solid var(--md-sys-color-outline-variant);
+    border-radius:16px;
+    padding:16px 18px;
+    transition: box-shadow .2s ease;
+  }
+  .meta-item:hover{box-shadow:var(--md-sys-elev-1)}
+  .meta-item strong{
+    display:flex; align-items:center; gap:6px;
+    font-family:"Google Sans", Roboto, sans-serif;
+    font-size:11px; font-weight:500; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--md-sys-color-on-surface-variant); margin-bottom:6px;
+  }
+  .meta-item strong .material-symbols-outlined{font-size:16px}
+  .meta-item{font-size:14px; font-weight:500; color:var(--md-sys-color-on-surface); line-height:20px}
+
+  /* Notice - M3 Filled Tonal */
+  .notice{
+    background:var(--md-sys-color-secondary-container);
+    color:var(--md-sys-color-on-secondary-container);
+    border:1px solid transparent;
+    border-radius:16px;
+    padding:16px 20px;
+    font-size:14px; line-height:20px;
+    display:flex; gap:12px; align-items:flex-start;
+    margin:8px 0 32px;
+  }
+  .notice .material-symbols-outlined{font-size:20px; margin-top:1px; flex-shrink:0}
+
+  h2{
+    font-family:"Google Sans", Roboto, sans-serif;
+    font-size:22px; line-height:28px; font-weight:500;
+    margin:40px 0 16px; letter-spacing:0;
+    color:var(--md-sys-color-on-surface);
+    display:flex; align-items:center; gap:12px;
+  }
+  h2::before{
+    content:""; width:4px; height:24px; border-radius:2px;
+    background:var(--md-sys-color-primary); display:inline-block;
+  }
+  h3{
+    font-family:"Google Sans", Roboto, sans-serif;
+    font-size:16px; line-height:24px; font-weight:500;
+    margin:24px 0 12px; color:var(--md-sys-color-on-surface);
+  }
+  p{margin:12px 0; font-size:14px; line-height:24px; color:var(--md-sys-color-on-surface); letter-spacing:0.25px}
+  ul{margin:8px 0 20px 0; padding-left:24px}
+  li{margin:8px 0; font-size:14px; line-height:22px; color:var(--md-sys-color-on-surface); letter-spacing:0.25px}
+  li::marker{color:var(--md-sys-color-primary)}
+  a{color:var(--md-sys-color-primary); text-decoration:none; font-weight:500}
+  a:hover{text-decoration:underline; text-underline-offset:3px}
+  a:visited{color:var(--md-sys-color-primary)}
+  code{
+    background:var(--md-sys-color-surface-container-high);
+    border:1px solid var(--md-sys-color-outline-variant);
+    border-radius:8px; padding:2px 8px; font-size:13px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color:var(--md-sys-color-on-surface);
+  }
+  .m3-divider{height:1px; background:var(--md-sys-color-outline-variant); margin:32px 0; border:0}
+  .m3-footer{
+    margin-top:40px; padding:20px 24px; border-radius:16px;
+    background:var(--md-sys-color-surface-container);
+    font-size:12px; line-height:18px; color:var(--md-sys-color-on-surface-variant);
+  }
+
+  @media(max-width:640px){
+    .container{padding:16px 12px 64px}
+    .m3-card{padding:20px; border-radius:24px}
+    .meta-grid{grid-template-columns:1fr}
+    h1{font-size:24px; line-height:32px}
+    .m3-top-app-bar{padding:12px 16px}
+  }
 </style>
 </head>
 <body>
+<div class="m3-top-app-bar">
+  <div class="m3-top-app-bar-inner">
+    <div class="m3-icon-button"><span class="material-symbols-outlined">privacy_tip</span></div>
+    <div>
+      <div class="m3-app-bar-title">LRC-Maker & Editor</div>
+      <div class="m3-app-bar-subtitle">Privacy Policy • Material 3</div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
-  <div class="card">
-    <h1>Privacy Policy for LRC-Maker & Editor</h1>
-    <div class="subtitle">LRC-Maker & Editor - Create, edit, synchronize, preview and save .lrc lyrics files</div>
+  <div class="m3-card">
+    <div class="m3-headline">
+      <div class="m3-headline-icon"><span class="material-symbols-outlined">shield</span></div>
+      <div>
+        <h1>Privacy Policy for LRC-Maker & Editor</h1>
+        <div class="subtitle">LRC-Maker & Editor - Create, edit, synchronize, preview and save .lrc lyrics files</div>
+      </div>
+    </div>
     
     <div class="meta-grid">
-      <div class="meta-item"><strong>Effective Date</strong>October 13, 2026</div>
-      <div class="meta-item"><strong>Developer / Data Controller</strong>CloudDream</div>
-      <div class="meta-item"><strong>Contact Email</strong>clouddream.app@gmail.com</div>
-      <div class="meta-item"><strong>App Package</strong>clouddream.lrc.maker.editor.pro</div>
+      <div class="meta-item"><strong><span class="material-symbols-outlined">event</span> Effective Date</strong>October 13, 2026</div>
+      <div class="meta-item"><strong><span class="material-symbols-outlined">person</span> Developer / Data Controller</strong>CloudDream</div>
+      <div class="meta-item"><strong><span class="material-symbols-outlined">mail</span> Contact Email</strong>clouddream.app@gmail.com</div>
+      <div class="meta-item"><strong><span class="material-symbols-outlined">package_2</span> App Package</strong>clouddream.lrc.maker.editor.pro</div>
     </div>
 
     <div class="notice">
-      This Privacy Policy explains how LRC-Maker &amp; Editor handles information when you use the app. The app is designed to work primarily on your device for lyrics editing, but it uses third-party advertising services that may collect information as described below.
+      <span class="material-symbols-outlined">info</span>
+      <span>This Privacy Policy explains how LRC-Maker &amp; Editor handles information when you use the app. The app is designed to work primarily on your device for lyrics editing, but it uses third-party advertising services that may collect information as described below.</span>
     </div>
 
     <h2>1. Overview</h2>
@@ -172,7 +359,11 @@
       Package: clouddream.lrc.maker.editor.pro
     </p>
 
-    <p style="font-size:13px;color:var(--muted);margin-top:32px">This document is provided for transparency and does not constitute legal advice. It is prepared based on the app functionality and SDKs observed (Google AdMob banner, interstitial, app open ads and Google UMP) and should be reviewed by legal counsel before publication to ensure compliance with applicable laws and Google Play Developer Program Policies.</p>
+    <hr class="m3-divider">
+    <div class="m3-footer">
+      <span class="material-symbols-outlined" style="font-size:16px; vertical-align:middle; margin-right:6px">gavel</span>
+      This document is provided for transparency and does not constitute legal advice. It is prepared based on the app functionality and SDKs observed (Google AdMob banner, interstitial, app open ads and Google UMP) and should be reviewed by legal counsel before publication to ensure compliance with applicable laws and Google Play Developer Program Policies.
+    </div>
   </div>
 </div>
 </body>
